@@ -1,0 +1,59 @@
+﻿@model List<Entities.Dto.KullaniciDto>
+@{
+    ViewBag.Title = "KullaniciList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+@if (ViewBag.RolAdi == "Admin")
+{
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+        <a style="margin-left: -1em; margin-bottom: 1em; width: 5em;" href="~/Kullanici/KullaniciCreate" class="btn btn-primary">Ekle</a>
+    </div>
+}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section class="panel">
+                <header class="panel-heading no-border">
+                    Hasta Uzmanlık
+                </header>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Adi Soyadı</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Rol Adı</th>
+                            @if (ViewBag.RolAdi == "Admin")
+                            {
+                                <th>Güncelle</th>
+                                <th>Sil</th>
+                            }
+                            </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@i</td>
+                            <td>@item.AdiSoyadi</td>
+                            <td>@item.KullaniciAdi</td>
+                            <td>@item.RolAdi</td>
+                            @if (ViewBag.RolAdi == "Admin")
+                            {
+                                <td>
+                                    <a href="/Kullanici/KullaniciEdit/@item.KullaniciId" class=" btn btn-warning btn-sm "><i data-feather='edit'></i>Güncelle </a>
+                                </td>
+                                <td>
+                                    <a href="/Kullanici/KullaniciDelete/@item.KullaniciId" class="btn btn-danger "><i data-feather='trash-2'></i> Sil</a>
+                                </td>
+                            }
+                            </tr>
+                            i = i + 1;
+                        }
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+

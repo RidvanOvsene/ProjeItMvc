@@ -1,0 +1,33 @@
+﻿@model Entities.Sponsor
+@{
+    ViewBag.Title = "SponsorEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <b>Güncelle</b>
+            </header>
+            <div class="panel-body">
+                <form class="form form-vertical" enctype="multipart/form-data" asp-action="SponsorEdit" asp-controller="Sponsor" method="post">
+                    @*<form role="form" class="form-horizontal tasi-form">*@
+                    <div class="form-group has-success">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Materyal Tip Adı</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" id="f-name" class="form-control" name="SponsorAdi" value="@Model.SponsorAdi">
+                            <input type="text" autocomplete="off" style="display:none !important" id="first-name-vertical" class="form-control" name="SponsorId" value="@Model.SponsorId" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10 " style="margin-top:10px;">
+                            <button class="btn btn-info" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+

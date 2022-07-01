@@ -1,0 +1,126 @@
+﻿@model Entities.ProjeTanim
+@{
+    ViewBag.Title = "ProjeTanimEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <b>Güncelle</b>
+            </header>
+            <div class="panel-body">
+                <form class="form form-vertical" enctype="multipart/form-data" asp-action="ProjeTanimEdit" asp-controller="ProjeTanim" method="post">
+
+                    <div class="form-group has-success">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Proje Tanım Adı</label>
+                        <div class="col-lg-10">
+                            <input type="text" autocomplete="off" style="display:none !important" id="first-name-vertical" class="form-control" name="ProjeTanimId" value="@Model.ProjeTanimId" />
+                            <input type="text" placeholder="" id="f-name" class="form-control" name="ProjeTanimAdi" value="@Model.ProjeTanimAdi">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Sponsor Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="SponsorId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.Sponsors)
+                                {
+                                    if (ViewBag.Proje.SponsorId == item.SponsorId)
+                                    {
+                                        <option selected value="@item.SponsorId">@item.SponsorAdi</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.SponsorId">@item.SponsorAdi</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Hasta Uzmanlık Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="HastaUzmanlikId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.HastaUzmanlik)
+                                {
+                                    if (ViewBag.Proje.HastaUzmanlikId == item.HastaUzmanlikId)
+                                    {
+                                        <option selected value="@item.HastaUzmanlikId">@item.HastaUzmanlikAdi</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.HastaUzmanlikId">@item.HastaUzmanlikAdi</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Kanser Tür Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="KanserTurId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.KanserTur)
+                                {
+                                    if (ViewBag.Proje.KanserTurId == item.KanserTurId)
+                                    {
+                                        <option selected value="@item.KanserTurId">@item.KanserTurAdi</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.KanserTurId">@item.KanserTurAdi</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Materyal Tip Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="MateryalTipId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.MataryalTip)
+                                {
+                                    if (ViewBag.Proje.MateryalTipId == item.MateryalTipId)
+                                    {
+                                        <option selected value="@item.MateryalTipId">@item.MateryalTipAdi</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.MateryalTipId">@item.MateryalTipAdi</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Tüp Cinsi Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="TüpCinsId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.Tüpcins)
+                                {
+                                    if (ViewBag.Proje.TüpCinsId == item.TüpCinsId)
+                                    {
+                                        <option selected value="@item.TüpCinsId">@item.TüpCinsAdi</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.TüpCinsId">@item.TüpCinsAdi</option>
+                                    }
+                                }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10 " style="margin-top:10px;">
+                            <button class="btn btn-info" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+

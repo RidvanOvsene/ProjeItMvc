@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <b>Ekle</b>
+            </header>
+            <div class="panel-body">
+                <form class="form form-vertical" enctype="multipart/form-data" asp-action="KullaniciCreate" asp-controller="Kullanici" method="post">
+
+                    <div class="form-group has-success">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Adı Soyadı</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" id="f-name" class="form-control" name="AdiSoyadi" value="">
+
+                        </div>
+                    </div>
+                    <div class="form-group has-success">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Kullanıcı Adı</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" id="f-name" class="form-control" name="KullaniciAdi" value="">
+
+                        </div>
+                    </div>
+                    <div class="form-group has-success" style="margin-top:2em;">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Rol Adı</label><br />
+                        <div class="col-lg-10">
+                            <select name="RolId" class="form-control input-lg m-bot15">
+                                @foreach (var item in ViewBag.Rol)
+                                {
+                                    <option value="@item.RolId">@item.RolAdi</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-success">
+                        <label style="font-size:17px" class="col-lg-2 control-label">Şifre</label>
+                        <div class="col-lg-10">
+                            <input type="password" placeholder="" id="f-name" class="form-control" name="Sifre" value="">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10 " style="margin-top:10px;">
+                            <button class="btn btn-info" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

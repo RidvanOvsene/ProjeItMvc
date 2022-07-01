@@ -1,0 +1,10 @@
+C:\Users\ovsen\source\repos\ProJeIt\Entities\bin\Debug\Entities.dll
+C:\Users\ovsen\source\repos\ProJeIt\Entities\bin\Debug\Entities.pdb
+C:\Users\ovsen\source\repos\ProJeIt\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ovsen\source\repos\ProJeIt\Entities\obj\Debug\Entities.dll
+C:\Users\ovsen\source\repos\ProJeIt\Entities\obj\Debug\Entities.pdb
+C:\Users\ovsen\source\repos\ProjeItMvc\Entities\bin\Debug\Entities.dll
+C:\Users\ovsen\source\repos\ProjeItMvc\Entities\bin\Debug\Entities.pdb
+C:\Users\ovsen\source\repos\ProjeItMvc\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ovsen\source\repos\ProjeItMvc\Entities\obj\Debug\Entities.dll
+C:\Users\ovsen\source\repos\ProjeItMvc\Entities\obj\Debug\Entities.pdb
